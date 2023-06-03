@@ -46,21 +46,18 @@ pen = Turtle()
 pen.shape('classic')
 pen.pensize(20)
 pen.speed(0)
+pen.penup()
 
 screen = Screen()
 screen.colormode(255)
 
 def painting():
-    posx = -230
     posy = -200
     for _ in range(10):
-        pen.penup()
-        pen.setposition(posx, posy)
+        pen.setposition(-230, posy)
         
         for _ in range(10):
-            pen.color(rand.choice(color_list))
-            pen.dot(20)
-            pen.penup()
+            pen.dot(20, rand.choice(color_list))
             pen.forward(50)
             posy += 5
 

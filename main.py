@@ -45,25 +45,24 @@ color_list = [(233, 239, 246), (246, 239, 242), (132, 166, 205), (221, 148, 106)
 pen = Turtle()
 pen.shape('classic')
 pen.pensize(20)
+pen.speed(0)
 
 screen = Screen()
 screen.colormode(255)
 
 def painting():
-    pen.penup()
-    pen.setposition(-230,-200)
-    directions = {
-        'east': 0,
-        'north': 90,
-        'west': 180,
-        'south': 270
-    }
-    
+    posx = -230
+    posy = -200
     for _ in range(10):
-        pen.color(rand.choice(color_list))
-        pen.dot(20)
         pen.penup()
-        pen.forward(50)
+        pen.setposition(posx, posy)
+        
+        for _ in range(10):
+            pen.color(rand.choice(color_list))
+            pen.dot(20)
+            pen.penup()
+            pen.forward(50)
+            posy += 5
 
 painting()
 

@@ -51,15 +51,21 @@ pen.penup()
 screen = Screen()
 screen.colormode(255)
 
-def painting():
-    posy = -200
-    for _ in range(10):
-        pen.setposition(-230, posy)
+# def painting():
+#     posy = -200
+#     for _ in range(10):
+#         pen.setposition(-230, posy)
         
-        for _ in range(10):
+#         for _ in range(10):
+#             pen.dot(20, rand.choice(color_list))
+#             pen.forward(50)
+#             posy += 5
+
+def painting():
+    for y in range(-250, 250, 50):
+        for x in range(-250, 250, 50):
+            pen.goto(x,y)
             pen.dot(20, rand.choice(color_list))
-            pen.forward(50)
-            posy += 5
 
 painting()
 
